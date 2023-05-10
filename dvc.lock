@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  train-and-evaluate:
+    cmd: python train_evaluate.py twitter_1.csv
+    deps:
+    - path: train_evaluate.py
+      md5: 3c7aa22bc369e9d74e20bbeb8b9d90e1
+      size: 3637
+    params:
+      params.yaml:
+        train.lstm_out: 16
+    outs:
+    - path: evaluation.json
+      md5: 5afdc2765ff9b7e58a38bde2360f71a1
+      size: 45
+    - path: history.json
+      md5: 710de5834824a7e9c564c022754a493f
+      size: 492
+    - path: model.h5
+      md5: 268aefc79911c628e32ad5379ebb090d
+      size: 5857448
